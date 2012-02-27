@@ -31,7 +31,7 @@
     },
 
     pushed: function () {
-      $(this).addClass('pushed');
+      $(this).children("span").addClass('pushed');
     },
 
     check: function () {
