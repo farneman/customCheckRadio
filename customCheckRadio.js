@@ -44,7 +44,7 @@
 
       if ($input.prop('checked') && inputType === "checkbox") {
         $span.removeClass('checked');
-        $input.prop('checked') === false;
+        $input.prop('checked', false);
       } else {
         // If it's a radio input deselect the other options spans
         if (inputType === "radio") {
@@ -55,7 +55,7 @@
         }
 
         $span.addClass('checked');
-        $input.prop('checked') === true;
+        $input.prop('checked', true);
       }
     }
   };
