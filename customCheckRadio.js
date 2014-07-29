@@ -10,7 +10,7 @@
           inputType = this.type,
           $span;
 
-        if ((inputType === "checkbox" || inputType === "radio") && this.className === "styled") {
+        if (inputType === "checkbox" || inputType === "radio") {
           // Wrap input with span
           $input.wrap('<span class="' + inputType + '"></span>');
           $span = $input.closest('span');
@@ -42,9 +42,9 @@
 
       $span.removeClass('pushed');
 
-      if ($input[0].checked && inputType === "checkbox") {
+      if ($input.prop('checked') && inputType === "checkbox") {
         $span.removeClass('checked');
-        $input[0].checked = false;
+        $input.prop('checked') = false;
       } else {
         // If it's a radio input deselect the other options spans
         if (inputType === "radio") {
@@ -55,7 +55,7 @@
         }
 
         $span.addClass('checked');
-        $input[0].checked = true;
+        $input.prop('checked') = true;
       }
     }
   };
